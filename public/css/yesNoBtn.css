@@ -1,0 +1,154 @@
+green = #4cd964
+red = #ff3b30
+
+body
+  font-family sans-serif
+  font-weight 800
+
+*
+  box-sizing border-box
+
+.radio
+.checkbox
+  position absolute
+  width 50%
+  height 100%
+  h1
+    text-align center
+    color #aaa
+    margin-top 30px
+    font-size 12px
+    font-weight 400
+.checkbox
+  left 50%
+  border-left 1px solid #b5b5b5
+
+.radio
+  .switch
+    position absolute
+    top 50%
+    left 50%
+    width 150px
+    height 50px
+    text-align center
+    margin -30px 0 0 -75px
+    background green
+    transition all 0.2s ease
+    border-radius 25px
+    span
+      position absolute
+      width 20px
+      height 4px
+      top 50%
+      left 50%
+      margin -2px 0px 0px -4px
+      background white
+      display block
+      transform rotate(-45deg)
+      transition all 0.2s ease
+      &:after
+        content ""
+        display block
+        position absolute
+        width 4px
+        height 12px
+        margin-top -8px
+        background white
+        transition all 0.2s ease
+
+  input[type=radio]
+    display none
+
+  .switch label
+    cursor pointer
+    color rgba(#000, .2)
+    width 60px
+    line-height 50px
+    transition all 0.2s ease
+
+  label[for=yes]
+    position absolute
+    left 0px
+    height 20px
+
+  label[for=no]
+    position absolute
+    right 0px
+
+  #no:checked ~ .switch
+    background red
+
+  #no:checked ~ .switch span
+    background white
+    margin-left -8px
+    &:after
+      background white
+      height 20px
+      margin-top -8px
+      margin-left 8px
+
+  #yes:checked ~ .switch label[for=yes]
+    color white
+
+  #no:checked ~ .switch label[for=no]
+    color white
+
+.checkbox
+  label
+    position absolute
+    top 50%
+    left 50%
+    width 150px
+    line-height 50px
+    text-align center
+    transform translate(-50%, -50%)
+    background-color red
+    transition all .2s ease
+    border-radius 25px
+    cursor pointer
+    &:after
+    &:before
+      transition all .1s linear
+      content ""
+      display block
+      position absolute
+      width 20px
+      height 4px
+      top 50%
+      left 50%
+      background #fff
+    &:after
+      margin -2px 0px 0px -10px
+      transform rotate(-45deg)
+    &:before
+      margin -2px 0px 0px -10px
+      transform rotate(45deg)
+    span
+      display inline-block
+      width 50%
+      float left
+      color rgba(#FFF, .9)
+      text-shadow 0px -1px 0px rgba(#000, .1)
+    span:first-child
+      color rgba(#000, .2)
+      cursor pointer
+    span:last-child
+      cursor default
+
+  input[type=checkbox]
+    display none
+
+  #switch:checked ~ label
+    background-color green
+    &:after
+      margin -2px 0px 0px -6px
+      width 18px
+    &:before
+      width 11px
+      margin 0px 0px 0px -10px
+    span:first-child
+      color rgba(#FFF, .9)
+      cursor default
+    span:last-child
+      color rgba(#000, .2)
+      cursor pointer
